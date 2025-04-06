@@ -1,0 +1,22 @@
+{
+    "title": "Join the Waitlist",
+    "subtitle": "Be among the first to experience Trend Copilot and unlock exclusive early access benefits.",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your@email.com",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "roleLabel": "What describes you best?",
+    "roleSelect": "Select your role...",
+    "roleFreelancer": "Freelancer/Solopreneur",
+    "roleCreator": "Content Creator",
+    "roleAgency": "Agency/Small Business",
+    "roleOther": "Other",
+    "submit": "Join the waitlist",
+    "submitting": "Processing...",
+    "successTitle": "You're on the list!",
+    "successMessage": "Thank you for joining our waitlist. We'll notify you when you get access.",
+    "successButton": "Register another email",
+    "errorEmail": "Please enter your email",
+    "errorGeneric": "Something went wrong. Please try again.",
+    "privacyNotice": "By joining, you agree to our Terms and Privacy Policy. We'll only use your email to send you updates about Trend Copilot."
+  }

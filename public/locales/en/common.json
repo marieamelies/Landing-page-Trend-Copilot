@@ -1,0 +1,24 @@
+{
+    "nav": {
+      "home": "Home",
+      "features": "Features",
+      "pricing": "Pricing",
+      "contact": "Contact"
+    },
+    "footer": {
+      "rights": "All rights reserved",
+      "madeWith": "Made with ❤️ by Trend Copilot",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "contact": "Contact Us"
+    },
+    "language": {
+      "label": "Language",
+      "en": "English",
+      "fr": "French"
+    },
+    "cta": {
+      "join": "Join Waitlist",
+      "learn": "Learn More"
+    }
+  }

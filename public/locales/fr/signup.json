@@ -1,0 +1,22 @@
+{
+    "title": "Rejoindre la liste d'attente",
+    "subtitle": "Soyez parmi les premiers à découvrir Trend Copilot et débloquez des avantages exclusifs d'accès anticipé.",
+    "emailLabel": "Email",
+    "emailPlaceholder": "votre@email.com",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Votre nom",
+    "roleLabel": "Qu'est-ce qui vous correspond le mieux ?",
+    "roleSelect": "Sélectionnez votre rôle...",
+    "roleFreelancer": "Freelance/Indépendant",
+    "roleCreator": "Créateur de contenu",
+    "roleAgency": "Agence/Petite entreprise",
+    "roleOther": "Autre",
+    "submit": "Rejoindre la liste d'attente",
+    "submitting": "Traitement en cours...",
+    "successTitle": "Vous êtes sur la liste !",
+    "successMessage": "Merci d'avoir rejoint notre liste d'attente. Nous vous informerons dès que vous aurez accès.",
+    "successButton": "Inscrire un autre email",
+    "errorEmail": "Veuillez saisir votre email",
+    "errorGeneric": "Une erreur s'est produite. Veuillez réessayer.",
+    "privacyNotice": "En vous inscrivant, vous acceptez nos Conditions d'utilisation et notre Politique de confidentialité. Nous utiliserons votre email uniquement pour vous envoyer des mises à jour concernant Trend Copilot."
+  }

@@ -1,0 +1,24 @@
+{
+    "title": "Trend Copilot | Assistant IA pour Réseaux Sociaux - Créateurs et Freelances",
+    "description": "Gagnez des heures chaque semaine avec Trend Copilot, l'assistant IA qui crée, planifie et optimise automatiquement votre contenu sur LinkedIn, Twitter et Instagram. Sans prompt nécessaire.",
+    "primaryKeywords": "assistant ia réseaux sociaux, automatisation réseaux sociaux, créateur contenu ia",
+    "secondaryKeywords": "planification contenu, planificateur posts, automatisation marketing, gestion réseaux sociaux, automatisation LinkedIn, IA sans prompt",
+    "schema": {
+      "softwareCategory": "ApplicationReseauxSociaux",
+      "featureList": "Création automatisée de contenu, Analyse de tendances, Planification intelligente, Publication multi-plateforme, Suivi des performances",
+      "faq": {
+        "q1": "Qu'est-ce que Trend Copilot ?",
+        "a1": "Trend Copilot est un assistant de médias sociaux propulsé par l'IA qui crée, planifie et optimise automatiquement du contenu pour les freelances, créateurs de contenu et petites entreprises. Il analyse les tendances et génère du contenu sans nécessiter de prompts.",
+        "q2": "Comment Trend Copilot me fait-il gagner du temps ?",
+        "a2": "Trend Copilot vous fait gagner des heures chaque semaine en automatisant tout votre flux de travail sur les réseaux sociaux. Il génère du contenu prêt à publier avec légendes, hashtags et visuels, analyse les moments optimaux de publication, planifie le contenu sur plusieurs plateformes et fournit des analyses de performance—le tout sans nécessiter de prompts manuels ou d'édition extensive.",
+        "q3": "Quelles plateformes de médias sociaux Trend Copilot prend-il en charge ?",
+        "a3": "Trend Copilot prend actuellement en charge LinkedIn, Twitter (X), Instagram et Facebook. Nous développons activement des intégrations pour TikTok et YouTube, qui seront disponibles prochainement.",
+        "q4": "Combien coûte Trend Copilot ?",
+        "a4": "Notre forfait Starter commence à 29€/mois pour un réseau social et 5 publications par semaine. Notre forfait Pro à 59€/mois inclut 3 réseaux, 10 publications par semaine et des analyses avancées. Les membres en accès anticipé bénéficient de tarifs spéciaux et de fonctionnalités supplémentaires.",
+        "q5": "Trend Copilot est-il disponible dans ma langue ?",
+        "a5": "Trend Copilot prend actuellement en charge l'anglais et le français, avec une génération de contenu optimisée pour les deux langues. Nous travaillons activement à l'ajout d'autres langues à notre plateforme.",
+        "q6": "Comment Trend Copilot analyse-t-il les tendances ?",
+        "a6": "Notre IA surveille constamment les plateformes de médias sociaux, les actualités du secteur et les sujets tendance pertinents pour votre niche. Elle identifie les modèles et le contenu à fort engagement pour générer des recommandations adaptées à votre audience et vos objectifs."
+      }
+    }
+  }

@@ -1,0 +1,24 @@
+{
+    "nav": {
+      "home": "Accueil",
+      "features": "Fonctionnalités",
+      "pricing": "Tarifs",
+      "contact": "Contact"
+    },
+    "footer": {
+      "rights": "Tous droits réservés",
+      "madeWith": "Fait avec ❤️ par Trend Copilot",
+      "terms": "Conditions d'Utilisation",
+      "privacy": "Politique de Confidentialité",
+      "contact": "Nous Contacter"
+    },
+    "language": {
+      "label": "Langue",
+      "en": "Anglais",
+      "fr": "Français"
+    },
+    "cta": {
+      "join": "Rejoindre la Liste",
+      "learn": "En Savoir Plus"
+    }
+  }

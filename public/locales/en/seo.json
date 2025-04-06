@@ -1,0 +1,24 @@
+{
+    "title": "Trend Copilot | AI-Powered Social Media Assistant for Content Creators & Freelancers",
+    "description": "Save hours every week with Trend Copilot, the AI social media assistant that automatically creates, schedules, and optimizes your content across LinkedIn, Twitter, and Instagram. No prompts needed.",
+    "primaryKeywords": "ai social media assistant, social media automation, ai content creator",
+    "secondaryKeywords": "content planning, social media scheduler, marketing automation, social media management, LinkedIn automation, no-prompt AI",
+    "schema": {
+      "softwareCategory": "SocialMediaApplication",
+      "featureList": "Automated content creation, Trend analysis, Smart scheduling, Multi-platform posting, Performance tracking",
+      "faq": {
+        "q1": "What is Trend Copilot?",
+        "a1": "Trend Copilot is an AI-powered social media assistant that automatically creates, schedules, and optimizes content for freelancers, content creators, and small businesses. It analyzes trends and generates content without requiring prompts.",
+        "q2": "How does Trend Copilot save me time?",
+        "a2": "Trend Copilot saves you hours each week by automating your entire social media workflow. It generates ready-to-publish content with captions, hashtags, and visuals, analyzes optimal posting times, schedules content across multiple platforms, and provides performance insights—all without requiring manual prompts or extensive editing.",
+        "q3": "Which social media platforms does Trend Copilot support?",
+        "a3": "Trend Copilot currently supports LinkedIn, Twitter (X), Instagram, and Facebook. We're actively developing integrations for TikTok and YouTube, which will be available soon.",
+        "q4": "How much does Trend Copilot cost?",
+        "a4": "Our Starter plan begins at $29/month for one social network and 5 posts per week. Our Pro plan at $59/month includes 3 networks, 10 posts per week, and advanced analytics. Early access members receive special pricing and additional features.",
+        "q5": "Is Trend Copilot available in my language?",
+        "a5": "Trend Copilot currently supports English and French, with content generation optimized for both languages. We're actively working on adding more languages to our platform.",
+        "q6": "How does Trend Copilot analyze trends?",
+        "a6": "Our AI constantly monitors social media platforms, industry news, and trending topics relevant to your niche. It identifies patterns and high-engagement content to generate recommendations tailored to your audience and goals."
+      }
+    }
+  }

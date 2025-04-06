@@ -1,10 +1,43 @@
 @import "tailwindcss";
 
+/* Variables racines pour le thème clair */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #5C33F6;
+  --primary-hover: #4826C9;
+  --secondary: #7B9AFF;
+  --accent: #FF6B00;
+  --muted: #f5f5f5;
+  --muted-foreground: #737373;
+  --card: #ffffff;
+  --card-foreground: #171717;
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: rgba(92, 51, 246, 0.3);
+  --radius: 0.5rem;
 }
 
+/* Thème sombre */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --primary: #6D43FF;
+    --primary-hover: #7B55FF;
+    --secondary: #9DB4FF;
+    --accent: #FF7D1A;
+    --muted: #1a1a1a;
+    --muted-foreground: #a3a3a3;
+    --card: #1a1a1a;
+    --card-foreground: #ededed;
+    --border: #333333;
+    --input: #333333;
+    --ring: rgba(109, 67, 255, 0.3);
+  }
+}
+
+/* Configuration du thème inline */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -12,15 +45,122 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Styles de base */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Styles pour les polices */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Styles pour les boutons */
+button, .button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+button:focus, .button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--ring);
+}
+
+/* Animations pour UI dynamique */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slowspin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slowspin {
+  animation: slowspin 20s linear infinite;
+}
+
+/* Éléments interactifs */
+.rotate-animate {
+  transition: transform 0.7s ease;
+}
+
+.rotate-animate:hover {
+  transform: rotate(45deg);
+}
+
+/* Styles pour créer des designs attrayants */
+.gradient-text {
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.dark .glass-effect {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Optimisation pour mobile */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  p.lead {
+    font-size: 1.125rem !important;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Animation pour le compteur */
+@keyframes countBump {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); color: var(--primary); }
+  100% { transform: scale(1); }
+}
+
+.count-animate {
+  animation: countBump 0.5s ease-out;
 }
