@@ -4,11 +4,20 @@ import Hero from '@/components/Hero';
 import PainPoints from '@/components/PainPoints';
 import HowItWorks from '@/components/HowItWorks';
 import SignupForm from '@/components/SignupForm';
+import Comparison from '@/components/Comparison';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
+import CaseStudy from '@/components/CaseStudy';
+import Roadmap from '@/components/Roadmap';
+import LaunchFeatures from '@/components/LaunchFeatures';
+import Faq from '@/components/Faq';
+
+
+
+
 
 // Déclaration de type pour Google Analytics
 declare global {
@@ -324,6 +333,11 @@ export default function Home() {
         <Hero />
         <PainPoints />
         <HowItWorks />
+        <Comparison />
+        <CaseStudy />
+        <LaunchFeatures />
+        <Roadmap />
+        <Faq />
         <SignupForm />
       </main>
       
@@ -368,6 +382,11 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         'pain', 
         'how', 
         'signup',
+        'comparison',
+        'caseStudy',
+        'launchFeatures',
+        'roadmap',
+        'faq', 
         'seo'
       ])),
     },

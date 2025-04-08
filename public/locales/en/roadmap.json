@@ -1,0 +1,25 @@
+{
+    "title": "Features coming after launch",
+    "item1": {
+      "title": "Instagram & X (Twitter) support",
+      "desc": "You’ll soon be able to schedule and publish to Instagram and X directly from Trend Copilot."
+    },
+    "item2": {
+      "title": "Voice-to-post creation",
+      "desc": "Speak an idea and let the AI turn it into a publish-ready post."
+    },
+    "item3": {
+      "title": "AI replies to comments",
+      "desc": "Automatically reply to your top comments using smart AI suggestions."
+    },
+    "item4": {
+      "title": "Deeper performance insights",
+      "desc": "Advanced analytics on engagement, audience behaviour and content formats."
+    },
+    "item5": {
+      "title": "Automatic smart formatting",
+      "desc": "Your posts will soon be auto-styled based on structure, tone and the target platform."
+}
+
+  }
+  

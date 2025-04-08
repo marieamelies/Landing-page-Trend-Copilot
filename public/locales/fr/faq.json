@@ -1,0 +1,32 @@
+{
+    "title": "Questions fréquentes",
+    "q1": {
+      "question": "Quelle IA est utilisée par Trend Copilot ?",
+      "answer": "Trend Copilot utilise GPT-4 et GPT-4o, enrichis par nos propres optimisations, prompts intelligents et préférences utilisateur. L’outil ne se contente pas de générer du texte — il crée une stratégie personnalisée pour vous."
+    },
+    "q2": {
+      "question": "Est-ce que mes données sont protégées ?",
+      "answer": "Oui. Vos données ne sont ni revendues ni utilisées pour entraîner l’IA. L’outil respecte les normes RGPD."
+    },
+    "q3": {
+      "question": "Quels réseaux sociaux sont compatibles ?",
+      "answer": "Trend Copilot est actuellement connecté à LinkedIn. L’intégration d’Instagram et X (Twitter) est prévue prochainement."
+    },
+    "q4": {
+      "question": "Quand pourrai-je accéder à l’outil ?",
+      "answer": "L’accès privé sera ouvert à partir de juin 2025. Inscrivez-vous à la liste d’attente pour être notifié·e."
+    },
+    "q5": {
+      "question": "Quel est le prix ?",
+      "answer": "Deux formules seront proposées au lancement : Starter à 29€/mois et Pro à 59€/mois. Un plan multi-utilisateur (équipes, agences) pourrait être proposé selon la demande."
+    },
+    "q6": {
+      "question": "Y aura-t-il un support client ?",
+      "answer": "Oui, une équipe répondra à vos questions par email et via le dashboard. Une base de connaissances sera aussi disponible."
+    },
+    "q7": {
+      "question": "L’outil est-il disponible en plusieurs langues ?",
+      "answer": "Oui, Trend Copilot est disponible en français et en anglais. Le contenu généré est optimisé pour les deux langues."
+    }
+  }
+  

@@ -1,0 +1,34 @@
+{
+    "title": "Fonctionnalités disponibles dès juin",
+    "item1": {
+      "title": "Générateur de posts IA",
+      "desc": "Créez du contenu engageant en quelques secondes, sans prompt, adapté à votre ton."
+    },
+    "item2": {
+      "title": "Analyse de tendances en temps réel",
+      "desc": "L’IA vous suggère des sujets d’actualité pertinents pour votre audience."
+    },
+    "item3": {
+      "title": "Visuels générés automatiquement",
+      "desc": "Recevez des visuels cohérents avec votre post, votre style et vos préférences."
+    },
+    "item4": {
+      "title": "Score d’impact prévisionnel",
+      "desc": "Estimez la performance probable de vos publications avant de les poster."
+    },
+    "item5": {
+      "title": "Calendrier éditorial intelligent",
+      "desc": "Planifiez vos contenus dans un calendrier optimisé avec des suggestions de créneaux."
+    },
+    "item6": {
+      "title": "Onboarding personnalisé",
+      "desc": "Votre profil est configuré automatiquement selon vos objectifs, ton et plateformes."
+    },
+    
+    "item7": {
+      "title": "Mise en forme avancée intégrée",
+      "desc": "Améliorez visuellement vos posts directement dans Trend Copilot grâce à un outil de mise en forme intégré (espaces, emojis, structure)."
+    }
+
+  }
+  

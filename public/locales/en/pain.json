@@ -1,9 +1,33 @@
 {
     "title": "What Trend Copilot solves",
-    "item1": "Spending too much time creating content",
-    "item2": "Lack of inspiration or clarity",
-    "item3": "Low engagement on social media",
-    "item4": "Publishing inconsistently",
-    "item5": "Struggling with what to post, when, and where"
+    "subtitle": "The everyday struggles creators face — and how we fix them.",
+    "item1": {
+      "title": "🕒 Too much time wasted",
+      "desc": "Hours lost every week doing it all manually."
+    },
+    "item2": {
+      "title": "💡 Lack of ideas",
+      "desc": "“I don’t know what to post” — the classic block."
+    },
+    "item3": {
+      "title": "📉 Weak engagement",
+      "desc": "Low reach, low impact, few results."
+    },
+    "item4": {
+      "title": "📆 Inconsistent posting",
+      "desc": "Post once, disappear for days… your audience forgets you."
+    },
+    "item5": {
+      "title": "❓ Too many unknowns",
+      "desc": "Topic, format, timing, platform — it’s always a guess."
+    },
+    "item6": {
+      "title": "🔁 Always starting from scratch",
+      "desc": "Nothing is automated. Everything feels like a fresh struggle."
+    },
+    "item7": {
+      "title": "⚙️ Too many tools to juggle",
+      "desc": "Canva, Notion, ChatGPT, scheduling tools… pure chaos."
+    }
   }
   

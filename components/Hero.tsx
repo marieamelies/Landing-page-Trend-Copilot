@@ -6,8 +6,8 @@ import Link from 'next/link';
 const Hero: FC = () => {
   const { t, i18n } = useTranslation('hero');
   const [isReady, setIsReady] = useState(false);
-  const [userCount, setUserCount] = useState(312);
-  const [remainingSpots, setRemainingSpots] = useState(500 - 312);
+  const [userCount, setUserCount] = useState(0);
+  const [remainingSpots, setRemainingSpots] = useState(500);
   const [isNewSignup, setIsNewSignup] = useState(false);
   const countRef = useRef<HTMLSpanElement>(null);
   
@@ -15,46 +15,46 @@ const Hero: FC = () => {
   useEffect(() => {
     if (i18n.language) {
       setIsReady(true);
+      fetchUserCount(); // Exécuter une seule fois au mount
     }
+  }, [i18n.language]);
 
-    // Fonction pour récupérer le nombre d'utilisateurs depuis l'API
-    const fetchUserCount = async () => {
-      try {
-        // Remplacer par votre API réelle
-        const response = await fetch('/api/waitlist-count');
-        const data = await response.json();
+  // Fonction pour récupérer le nombre d'utilisateurs depuis l'API
+  const fetchUserCount = async () => {
+    try {
+      // Remplacer par votre API réelle
+      const response = await fetch('/api/waitlist-count');
+      const data = await response.json();
+      
+      console.log('User count:', data.count); // Log pour le débug
+      
+      // Animation uniquement si c'est une nouvelle valeur
+      if (data.count > userCount) {
+        setIsNewSignup(true);
+        setTimeout(() => setIsNewSignup(false), 3000);
         
-        // Animation uniquement si c'est une nouvelle valeur
-        if (data.count > userCount) {
-          setIsNewSignup(true);
-          setTimeout(() => setIsNewSignup(false), 3000);
-          
-          // Animation du compteur
-          if (countRef.current) {
-            countRef.current.classList.add('text-green-500', 'scale-110');
-            setTimeout(() => {
-              if (countRef.current) {
-                countRef.current.classList.remove('text-green-500', 'scale-110');
-              }
-            }, 2000);
-          }
+        // Animation du compteur
+        if (countRef.current) {
+          countRef.current.classList.add('text-green-500', 'scale-110');
+          setTimeout(() => {
+            if (countRef.current) {
+              countRef.current.classList.remove('text-green-500', 'scale-110');
+            }
+          }, 2000);
         }
-        
-        setUserCount(data.count);
-        setRemainingSpots(Math.max(0, 500 - data.count));
-      } catch (error) {
-        console.error("Erreur lors de la récupération du compteur", error);
-        // Fallback silencieux pour maintenir l'expérience utilisateur
-        const simulatedIncrease = Math.floor(Math.random() * 3) + 1;
-        setUserCount(prev => prev + simulatedIncrease);
-        setRemainingSpots(prev => Math.max(0, prev - simulatedIncrease));
       }
-    };
+      
+      setUserCount(data.count);
+      setRemainingSpots(Math.max(0, 500 - data.count));
+    } catch (error) {
+      console.error("Erreur lors de la récupération du compteur", error);
+      // Nouveau fallback sans incrément simulé
+      console.warn('Fallback: keeping current count');
+    }
+  };
 
-    // Vérifier initialement
-    fetchUserCount();
-    
-    // Mettre en place une connexion WebSocket ou SSE pour les mises à jour en temps réel
+  // Mettre en place une connexion WebSocket ou SSE pour les mises à jour en temps réel
+  useEffect(() => {
     let eventSource: EventSource | null = null;
     try {
       eventSource = new EventSource('/api/waitlist-events');
@@ -68,14 +68,14 @@ const Hero: FC = () => {
       console.error("Erreur lors de la connexion aux événements", error);
     }
 
-    // Ou, comme solution de repli, polling toutes les 10 secondes
-    const interval = setInterval(fetchUserCount, 10000);
+    // Interval plus long (60 secondes au lieu de 10)
+    const interval = setInterval(fetchUserCount, 60000); // Toutes les 60 secondes
     
     return () => {
       if (eventSource) eventSource.close();
       clearInterval(interval);
     };
-  }, [i18n.language, userCount]);
+  }, []);
 
   if (!isReady) return null;
 

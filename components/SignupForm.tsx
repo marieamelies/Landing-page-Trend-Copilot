@@ -8,6 +8,7 @@ const SignupForm: FC = () => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [role, setRole] = useState('');
+  const [code, setCode] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
@@ -41,29 +42,71 @@ const SignupForm: FC = () => {
     setSubmitting(true);
     setError('');
     
+    // 📍 Détection du pays
+    let country = '';
     try {
-      // Ici, vous ferez un appel API réel pour enregistrer l'utilisateur
-      // Pour l'instant, simulons une requête réussie après un court délai
-      await new Promise(resolve => setTimeout(resolve, 800));
+      const res = await fetch('https://ipapi.co/json/');
+      const geo = await res.json();
+      country = geo?.country || '';
+    } catch (err) {
+      console.warn('IP location failed', err);
+    }
+    
+    try {
+      // Préparation du payload avec les champs demandés
+      const payload = {
+        email: email.trim().toLowerCase(),
+        name: name?.trim() || null,
+        role: role?.trim() || null,
+        language: i18n.language,
+        country,
+        source: 'landing',
+        referral_code: code?.trim() || null
+      };
       
-      // Succès
-      setSuccess(true);
-      setEmail('');
-      setName('');
-      setRole('');
+      // Envoi des données à l'API
+      const res = await fetch('/api/waitlist-signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
       
-      // Effet de confetti (option)
-      if (typeof window !== 'undefined') {
-        // Vous pourriez ajouter ici une bibliothèque de confetti
-        // Par exemple: import confetti from 'canvas-confetti';
-        // confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+      const data = await res.json();
+      
+      if (res.ok) {
+        // Succès
+        setSuccess(true);
+        
+        // Envoi d'un email de confirmation
+        await fetch('/api/send-confirmation', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ 
+            email: email.trim().toLowerCase(), 
+            name: name?.trim() || null, 
+            language: i18n.language 
+          }),
+        }).catch(err => {
+          // Silencieusement capturé - l'utilisateur est déjà inscrit même si l'email échoue
+          console.warn('Confirmation email failed', err);
+        });
+        
+        setEmail('');
+        setName('');
+        setRole('');
+        setCode('');
+        
+        // Réinitialiser après quelques secondes (option)
+        setTimeout(() => {
+          setSuccess(false);
+        }, 5000);
+      } else {
+        setError(data.message || t('errorGeneric', 'Something went wrong. Please try again.'));
       }
-      
-      // Réinitialiser après quelques secondes (option)
-      setTimeout(() => {
-        setSuccess(false);
-      }, 5000);
-      
     } catch (err) {
       setError(t('errorGeneric', 'Something went wrong. Please try again.'));
       console.error('Error submitting form:', err);
@@ -97,26 +140,35 @@ const SignupForm: FC = () => {
         
         {/* Success message */}
         {success ? (
-          <div className="bg-green-50 dark:bg-green-900/30 p-8 rounded-xl text-center animate-fadeIn">
-            <div className="flex justify-center mb-4">
-              <div className="w-16 h-16 bg-green-100 dark:bg-green-800 rounded-full flex items-center justify-center">
-                <svg className="w-8 h-8 text-green-600 dark:text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
+          <div className="relative bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl p-10 text-center shadow-xl animate-fadeIn">
+            {/* 🎉 Visuel animé */}
+            <div className="flex justify-center mb-6">
+              <div className="relative w-24 h-24">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500 via-indigo-500 to-pink-500 animate-ping opacity-50"></div>
+                <div className="relative w-full h-full flex items-center justify-center rounded-full bg-indigo-600 text-white text-4xl shadow-lg">
+                  🎉
+                </div>
               </div>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+            
+            {/* 🧠 Titre & message */}
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
               {t('successTitle', 'You\'re on the list!')}
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
-              {t('successMessage', 'Thank you for joining our waitlist. We\'ll notify you when you get access.')}
+            <p className="text-gray-600 dark:text-gray-300 text-lg">
+              {t('successMessage', 'You\'ve successfully joined the waitlist. We\'ll keep you posted!')}
             </p>
-            <button 
-              onClick={() => setSuccess(false)}
-              className="px-4 py-2 text-sm font-medium text-indigo-600 dark:text-indigo-400 underline"
-            >
-              {t('successButton', 'Register another email')}
-            </button>
+            
+            {/* 🔔 Liens de soutien crowdfunding */}
+            <p className="text-sm mt-6 text-gray-500 dark:text-gray-400">
+              {t('supportUsHint', 'Want to support our launch?')} 👉&nbsp;
+              <a href="https://fr.ulule.com/trendcopilot" target="_blank" rel="noopener" className="text-indigo-600 dark:text-indigo-400 underline">
+                Ulule
+              </a> {t('or', 'or')}&nbsp;
+              <a href="https://www.kickstarter.com/projects/trendcopilot" target="_blank" rel="noopener" className="text-indigo-600 dark:text-indigo-400 underline ml-1">
+                Kickstarter
+              </a>
+            </p>
           </div>
         ) : (
           /* Form */
@@ -174,6 +226,21 @@ const SignupForm: FC = () => {
                     </option>
                   ))}
                 </select>
+              </div>
+              
+              {/* Promo code field */}
+              <div>
+                <label htmlFor="code" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  {t('codeLabel', 'Promo Code')}
+                </label>
+                <input
+                  id="code"
+                  type="text"
+                  value={code}
+                  onChange={(e) => setCode(e.target.value)}
+                  placeholder={t('codePlaceholder', 'Enter promo code (optional)')}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none transition-all"
+                />
               </div>
               
               {/* Error message */}

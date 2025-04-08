@@ -5,9 +5,10 @@ const Header: FC = () => {
   const { t, i18n } = useTranslation('common');
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+    <header className="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex justify-between items-center h-16">
+          {/* Logo et nom de marque */}
           <div className="flex items-center gap-2">
             <div
               className="w-8 h-8 bg-gradient-to-br from-[#5C33F6] to-[#7B9AFF] rounded-full shadow-md animate-slowspin"
@@ -16,8 +17,13 @@ const Header: FC = () => {
               }}
               aria-hidden="true"
             ></div>
-            <span className="font-bold text-lg">Trend Copilot</span>
+            <span className="text-2xl font-heading font-bold tracking-tight text-gray-900 dark:text-white">
+                Trend Copilot
+                </span>
+
           </div>
+
+          {/* Langue + CTA */}
           <div className="flex items-center gap-4">
             <select 
               className="text-sm bg-transparent border border-gray-200 dark:border-gray-700 rounded-md px-2 py-1"
@@ -30,6 +36,7 @@ const Header: FC = () => {
               <option value="en">{t('language.en')}</option>
               <option value="fr">{t('language.fr')}</option>
             </select>
+
             <button 
               className="text-white bg-[#5C33F6] hover:bg-[#4826C9] px-4 py-2 rounded-lg text-sm font-medium transition-all transform hover:-translate-y-0.5"
               onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}

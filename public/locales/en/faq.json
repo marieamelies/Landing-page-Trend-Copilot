@@ -1,0 +1,32 @@
+{
+    "title": "Frequently Asked Questions",
+    "q1": {
+      "question": "What AI does Trend Copilot use?",
+      "answer": "Trend Copilot is powered by GPT-4 and GPT-4o, with custom fine-tuning, prompt optimization and user preferences layered on top. It’s not just text generation — it’s strategic content built for you."
+    },
+    "q2": {
+      "question": "Is my data protected?",
+      "answer": "Yes. Your data is never sold or used to train AI. We fully comply with GDPR regulations."
+    },
+    "q3": {
+      "question": "Which social media platforms are supported?",
+      "answer": "Trend Copilot currently supports LinkedIn. Instagram and X (Twitter) integrations are in progress."
+    },
+    "q4": {
+      "question": "When will I get access?",
+      "answer": "Private access will open starting June 2025. Join the waitlist to be notified."
+    },
+    "q5": {
+      "question": "How much does it cost?",
+      "answer": "Two plans will be available at launch: Starter (€29/month) and Pro (€59/month). A multi-user or team plan may be offered based on demand."
+    },
+    "q6": {
+      "question": "Will there be customer support?",
+      "answer": "Yes, you’ll get support via email and from inside your dashboard. A help center will also be available."
+    },
+    "q7": {
+      "question": "Is the tool multilingual?",
+      "answer": "Yes. Trend Copilot is available in French and English, and content generation is optimized for both languages."
+    }
+  }
+  

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="420" height="60" viewBox="0 0 420 60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="copilotGradientLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5C33F6"/>
+      <stop offset="100%" stop-color="#7B9AFF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fond clair -->
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+
+  <!-- Icône polygone -->
+  <polygon points="40,10 56,18 64,30 56,42 40,50 24,42 16,30 24,18" fill="url(#copilotGradientLight)" />
+
+  <!-- Texte vectorisé (Clash Display Bold, 36px) pour 'Trend Copilot' -->
+  <path d="M80.184 37.992h3.937l1.813-6.429h9.105l1.813 6.429h3.937L94.964 14h-6.747l-8.033 23.992Zm9.287-9.315 2.739-9.19h.18l2.739 9.19h-5.658Zm11.303 9.315h4.95V25.488h.18l5.863 12.504h5.339V14h-4.95v12.276h-.18L106.9 14h-5.126v23.992Zm7.757 0h4.812V18.924h4.034V14h-12.88v4.924h4.034v19.068Zm7.863 0h4.812v-7.372h6.708v-4.032h-6.708v-7.812h7.145V14h-12.057v23.992Zm6.66 0h4.812V18.924h4.17V14h-13.152v4.924h4.17v19.068Zm7.875 0h4.812V14h-4.812v23.992Zm7.9 0h4.812V25.26h.18l5.162 12.732h5.197V14h-4.812v12.504h-.18L136.9 14h-5.016v23.992Zm9.516 0h4.812V22.764h4.788v-4.172h-4.788V14h-4.812v4.592h-3.504v4.172h3.504v15.228Zm6.188 0h4.812V25.26h.18l5.162 12.732h5.197V14h-4.812v12.504h-.18L153.088 14h-5.016v23.992Zm7.824 0h4.812v-7.372h6.708v-4.032h-6.708v-7.812h7.145V14h-12.057v23.992Z" fill="#202124"/>
+</svg>
