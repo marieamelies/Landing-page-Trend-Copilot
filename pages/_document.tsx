@@ -4,6 +4,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* 🔍 Google Search Console verification */}
+        <meta name="google-site-verification" content="2jhDEdPWV8oEF5cFDgEORtp6CAUfgkJaIYJatI53HD8" />
+
         {/* Google Fonts */}
         <link
           href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&display=swap"
