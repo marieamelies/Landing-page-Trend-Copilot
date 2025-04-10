@@ -17,8 +17,14 @@ const nextConfig: NextConfig = {
         destination: '/api/sitemap.xml',
         permanent: true,
       },
+      {
+        source: '/robots.txt',
+        destination: '/api/robots.txt',
+        permanent: true,
+      },
     ];
   },
 };
 
 export default nextConfig;
+
