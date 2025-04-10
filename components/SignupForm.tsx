@@ -47,7 +47,7 @@ declare global {
         const pageHeight = document.body.scrollHeight;
         const scrollPercent = (scrollPosition / pageHeight) * 100;
         
-        if (scrollPercent >= 80) {
+        if (scrollPercent >= 50) {
           if (typeof window !== 'undefined' && window.plausible) {
             window.plausible('scroll_80_percent');
           }

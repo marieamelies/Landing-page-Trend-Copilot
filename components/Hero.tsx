@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import { useState, useEffect, useRef } from 'react';
 
 
+
 const Hero: FC = () => {
   const { t, i18n } = useTranslation('hero');
   const [isReady, setIsReady] = useState(false);
@@ -18,6 +19,17 @@ const Hero: FC = () => {
       fetchUserCount(); // Exécuter une seule fois au mount
     }
   }, [i18n.language]);
+    // Plausible - Engaged 15s
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        if (typeof window !== 'undefined' && window.plausible) {
+          window.plausible('engaged_15s');
+        }
+      }, 15000); // 15 secondes
+  
+      return () => clearTimeout(timer);
+    }, []);
+  
 
   // Fonction pour récupérer le nombre d'utilisateurs depuis l'API
   const fetchUserCount = async () => {
