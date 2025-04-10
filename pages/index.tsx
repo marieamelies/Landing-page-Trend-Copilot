@@ -14,6 +14,8 @@ import CaseStudy from '@/components/CaseStudy';
 import Roadmap from '@/components/Roadmap';
 import LaunchFeatures from '@/components/LaunchFeatures';
 import Faq from '@/components/Faq';
+import Pricing from '@/components/Pricing';
+import Link from 'next/link';
 
 
 
@@ -337,38 +339,60 @@ export default function Home() {
         <CaseStudy />
         <LaunchFeatures />
         <Roadmap />
+        <Pricing/>
         <Faq />
         <SignupForm />
       </main>
       
       <footer className="bg-gray-50 dark:bg-gray-900 py-12 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <div 
-              className="w-8 h-8 bg-gradient-to-br from-[#5C33F6] to-[#7B9AFF] rounded-md"
-              aria-hidden="true"
-            ></div>
-            <span className="font-bold text-lg">Trend Copilot</span>
-          </div>
-          <div className="flex flex-wrap justify-center gap-8 mb-6 text-sm">
-            <a href="#" className="text-gray-600 hover:text-[#5C33F6] dark:text-gray-400 dark:hover:text-[#7B9AFF] transition-colors">
-              {t('footer.terms')}
-            </a>
-            <a href="#" className="text-gray-600 hover:text-[#5C33F6] dark:text-gray-400 dark:hover:text-[#7B9AFF] transition-colors">
-              {t('footer.privacy')}
-            </a>
-            <a href="mailto:contact@trendcopilot.ai" className="text-gray-600 hover:text-[#5C33F6] dark:text-gray-400 dark:hover:text-[#7B9AFF] transition-colors">
-              {t('footer.contact')}
-            </a>
-          </div>
-          <p className="text-gray-500 dark:text-gray-400 text-sm">
-            © {new Date().getFullYear()} Trend Copilot. {t('footer.rights')}
-          </p>
-          <p className="text-gray-500 dark:text-gray-400 text-sm mt-2">
-            {t('footer.madeWith')}
-          </p>
-        </div>
-      </footer>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div className="flex items-center justify-center gap-2 mb-6">
+      <div 
+        className="w-8 h-8 bg-gradient-to-br from-[#5C33F6] to-[#7B9AFF] rounded-full shadow-md animate-slowspin"
+        style={{
+          clipPath: 'polygon(50% 0%, 80% 20%, 100% 50%, 80% 80%, 50% 100%, 20% 80%, 0% 50%, 20% 20%)',
+        }}
+        aria-hidden="true"
+      ></div>
+      <span className="font-bold text-lg text-gray-900 dark:text-white">
+        Trend Copilot
+      </span>
+    </div>
+
+    <div className="flex flex-wrap justify-center gap-8 mb-6 text-sm">
+  <Link 
+    href="/terms" 
+    className="text-gray-600 hover:text-[#5C33F6] dark:text-gray-400 dark:hover:text-[#7B9AFF] transition-colors"
+  >
+    {t('footer.terms')}
+  </Link>
+
+  <Link 
+    href="/privacy" 
+    className="text-gray-600 hover:text-[#5C33F6] dark:text-gray-400 dark:hover:text-[#7B9AFF] transition-colors"
+  >
+    {t('footer.privacy')}
+  </Link>
+
+  <a 
+    href="mailto:hello@trendcopilot.ai" 
+    className="text-gray-600 hover:text-[#5C33F6] dark:text-gray-400 dark:hover:text-[#7B9AFF] transition-colors"
+  >
+    {t('footer.contactLabel', 'Contact us')}
+  </a>
+</div>
+
+
+
+    <p className="text-gray-500 dark:text-gray-400 text-sm">
+      © {new Date().getFullYear()} Trend Copilot. {t('footer.rights')}
+    </p>
+    <p className="text-gray-500 dark:text-gray-400 text-sm mt-2">
+      {t('footer.madeWith')}
+    </p>
+  </div>
+</footer>
+
     </>
   );
 }
@@ -386,6 +410,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         'caseStudy',
         'launchFeatures',
         'roadmap',
+        'pricing',
         'faq', 
         'seo'
       ])),

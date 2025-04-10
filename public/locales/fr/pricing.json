@@ -1,0 +1,55 @@
+{
+    "title": "Tarifs",
+    "perMonth": "mois",
+  
+    "starter": {
+      "title": "Starter – 19€/mois",
+      "f1": "1 réseau social (LinkedIn uniquement)",
+      "f2": "3 posts / semaine",
+      "f3": "Génération de contenu automatique, sans prompt",
+      "f4": "Ton personnalisé + hashtags + mise en forme",
+      "f5": "Calendrier éditorial (limité à 7 jours)",
+      "f6": "Suggestions de sujets tendance",
+      "f7": "Onboarding intelligent",
+      "f8": "Contenu en FR & EN",
+      "f9": "Accès à l’outil en bêta",
+  
+      "na1": "Pas d’analyse de performance",
+      "na2": "Pas d’Instagram ou X (Twitter)",
+      "na3": "Pas d’export CSV",
+      "na4": "Pas de support prioritaire",
+      "na5": "Pas d’accès aux nouveautés en avant-première"
+    },
+  
+    "pro": {
+      "title": "Pro – 39€/mois",
+      "badge": "Le plus populaire",
+      "f1": "Jusqu’à 3 réseaux (LinkedIn, Instagram, X)",
+      "f2": "10 posts / semaine",
+      "f3": "Contenu adapté aux formats de chaque réseau",
+      "f4": "Accès anticipé aux nouvelles fonctionnalités",
+      "f5": "Analyse de performance (clics, vues, engagement)",
+      "f6": "Export CSV",
+      "f7": "Support prioritaire par email",
+      "f8": "Onboarding amélioré + recommandations IA",
+      "f9": "Suggestions de créneaux de publication",
+      "f10": "Historique de vos publications"
+    },
+  
+    "max": {
+      "title": "Offre Visibilité MAX – 149€/mois",
+      "badge": "Engagement annuel",
+      "price": "149€",
+      "f1": "Toutes les fonctionnalités de l'offre Pro",
+      "f2": "Landing page personnalisée multilingue optimisée SEO",
+      "f3": "Envoi automatique d’un email de bienvenue à l’inscription",
+      "f4": "Outils de suivi intégrés (trafic, conversions, etc.)",
+      "f5": "Livraison sous 7 jours ouvrés maximum",
+      "f6": "En option : logo + mini charte graphique"
+    },
+  
+    "ctaContact": "Vous souhaitez prendre une longueur d’avance avec l’offre Visibilité MAX ?",
+    "ctaSubtext": "Ou avez une question ? Écrivez-nous à <a href=\"mailto:hello@trendcopilot.ai\" class=\"text-indigo-600 underline\">hello@trendcopilot.ai</a>"
+  }
+  
+  

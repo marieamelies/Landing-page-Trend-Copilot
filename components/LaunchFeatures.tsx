@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import { FC, useEffect, useState } from 'react';
+import { CheckCircle } from 'lucide-react';
 
 const LaunchFeatures: FC = () => {
   const { t, i18n } = useTranslation('launchFeatures');
@@ -16,27 +17,34 @@ const LaunchFeatures: FC = () => {
     { title: t('item2.title'), description: t('item2.desc') },
     { title: t('item3.title'), description: t('item3.desc') },
     { title: t('item4.title'), description: t('item4.desc') },
-    { title: t('item5.title'), description: t('item5.desc') },
-    { title: t('item6.title'), description: t('item6.desc') },
-    { title: t('item7.title'), description: t('item7.desc') }
-
   ];
 
   return (
-    <section className="w-full py-20 px-4 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12">
+    <section className="w-full py-20 px-4 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-6">
           {t('title')}
         </h2>
-        <div className="grid gap-8 md:grid-cols-2 text-left">
+        <p className="text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
+          {t('subtitle', 'Everything you get at launch — already live.')}
+        </p>
+        <div className="grid md:grid-cols-2 gap-8">
           {features.map((feature, idx) => (
-            <div key={idx} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                {feature.title}
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300 mt-2">
-                {feature.description}
-              </p>
+            <div
+              key={idx}
+              className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg p-6 text-left transition hover:shadow-xl"
+            >
+              <div className="flex items-start gap-4">
+                <CheckCircle className="text-indigo-600 dark:text-indigo-400 mt-1" size={28} />
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 mt-2 text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

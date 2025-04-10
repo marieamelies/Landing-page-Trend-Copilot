@@ -31,7 +31,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           <li>🚀 Créé pour les freelances, créateurs et TPE qui veulent accélérer.</li>
         </ul>
         <p><strong>👉 L'accès early, c’est : bonus exclusifs + onboarding prioritaire.</strong></p>
-        <p>(Mais réservé aux 500 premiers 👀)</p>
+        <p>(Mais réservé aux 50 premiers 👀)</p>
 
         <p>❤️ Vous voulez soutenir le projet ?</p>
         <ul>
@@ -56,7 +56,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           <li>📈 Built for creators, freelancers & small teams who move fast.</li>
         </ul>
         <p><strong>👉 Early access = exclusive perks, premium features & priority onboarding.</strong></p>
-        <p>(And yes — only the first 500 get the full stack.)</p>
+        <p>(And yes — only the first 50 get the full stack.)</p>
 
         <p>🚨 Want to boost our launch & get noticed?</p>
         <ul>

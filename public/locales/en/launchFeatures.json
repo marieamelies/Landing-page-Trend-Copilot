@@ -1,33 +1,20 @@
 {
-    "title": "Available at launch (June)",
-    "item1": {
-      "title": "AI-powered post generation",
-      "desc": "Create high-performing content in seconds — no prompt needed, tailored to your tone."
-    },
-    "item2": {
-      "title": "Live trend analysis",
-      "desc": "The AI suggests trending topics relevant to your audience and niche."
-    },
-    "item3": {
-      "title": "Auto-generated visuals",
-      "desc": "Receive visuals that match your style, post and preferences — automatically."
-    },
-    "item4": {
-      "title": "Impact score before publishing",
-      "desc": "Estimate your post's performance before it goes live."
-    },
-    "item5": {
-      "title": "Smart editorial calendar",
-      "desc": "Plan your posts with optimized time slots in a smart calendar view."
-    },
-    "item6": {
-      "title": "Personalized onboarding",
-      "desc": "Your profile is automatically configured to match your goals, tone and platforms."
-    },
-    "item7": {
-      "title": "Built-in formatting tool",
-      "desc": "Make your posts more visually engaging using the built-in formatter — structure, spacing and visual clarity without leaving the tool."
-    }
-
+  "title": "Everything you get from Day 1",
+  "subtitle": "All the core features are already live — ready when you are.",
+  "item1": {
+    "title": "AI-powered content. No prompt needed.",
+    "desc": "Generate posts in your tone of voice, aligned with your goals — in just one click."
+  },
+  "item2": {
+    "title": "Real-time trend detection",
+    "desc": "Your content is fueled by relevant, fact-checked trends — updated daily."
+  },
+  "item3": {
+    "title": "Smart formatting, built in",
+    "desc": "Make your posts shine with structured layouts, emojis, and clean spacing — no extra tools needed."
+  },
+  "item4": {
+    "title": "Personalized onboarding",
+    "desc": "Get a custom publishing plan based on your goals, audience, and experience level."
   }
-  
+}

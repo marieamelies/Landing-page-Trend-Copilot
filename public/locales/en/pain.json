@@ -1,33 +1,17 @@
 {
-    "title": "What Trend Copilot solves",
-    "subtitle": "The everyday struggles creators face — and how we fix them.",
-    "item1": {
-      "title": "🕒 Too much time wasted",
-      "desc": "Hours lost every week doing it all manually."
-    },
-    "item2": {
-      "title": "💡 Lack of ideas",
-      "desc": "“I don’t know what to post” — the classic block."
-    },
-    "item3": {
-      "title": "📉 Weak engagement",
-      "desc": "Low reach, low impact, few results."
-    },
-    "item4": {
-      "title": "📆 Inconsistent posting",
-      "desc": "Post once, disappear for days… your audience forgets you."
-    },
-    "item5": {
-      "title": "❓ Too many unknowns",
-      "desc": "Topic, format, timing, platform — it’s always a guess."
-    },
-    "item6": {
-      "title": "🔁 Always starting from scratch",
-      "desc": "Nothing is automated. Everything feels like a fresh struggle."
-    },
-    "item7": {
-      "title": "⚙️ Too many tools to juggle",
-      "desc": "Canva, Notion, ChatGPT, scheduling tools… pure chaos."
-    }
+    "title": "What Trend Copilot Solves",
+    "subtitle": "The pains every content creator faces — and how we eliminate them.",
+    "point1Title": "Wasted time",
+    "point1Desc": "Hours lost every week switching tools and writing posts manually.",
+    "point2Title": "Lack of ideas",
+    "point2Desc": "Struggling to figure out what to post — especially under pressure to stay consistent.",
+    "point3Title": "Low engagement",
+    "point3Desc": "Few views, clicks, or results… even after hours of effort.",
+    "point4Title": "No posting rhythm",
+    "point4Desc": "Post once… then ghost. Your audience drops off fast.",
+    "point5Title": "Too much uncertainty",
+    "point5Desc": "Topic? Format? Time? Platform? Too many unknowns hold you back.",
+    "point6Title": "Always starting from scratch",
+    "point6Desc": "No automation. Every post takes ages to recreate manually."
   }
   

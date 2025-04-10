@@ -1,25 +1,27 @@
 {
-    "title": "Fonctionnalités prévues après le lancement",
-    "item1": {
-      "title": "Support Instagram et X (Twitter)",
-      "desc": "Vous pourrez bientôt planifier et publier sur Instagram et X directement depuis Trend Copilot."
-    },
-    "item2": {
-      "title": "Création de post à la voix",
-      "desc": "Exprimez une idée à l’oral, elle sera automatiquement transformée en post prêt à publier."
-    },
-    "item3": {
-      "title": "Réponses IA aux commentaires",
-      "desc": "Répondez automatiquement aux commentaires les plus engageants grâce à l’IA."
-    },
-    "item4": {
-      "title": "Amélioration des performances",
-      "desc": "Analyse encore plus fine de l’engagement, des audiences et des formats efficaces."
-    },
-    "item5": {
-      "title": "Mise en forme automatique intelligente",
-      "desc": "Vos posts seront bientôt stylisés automatiquement selon leur structure, le ton et la plateforme ciblée."
-    }
+    "title": "Roadmap publique (printemps 2024 – début 2025)",
+    "phase1Title": "Mai 2024 — Lancement initial",
+    "phase1List": [
+      "Contenu généré sans prompt, dans ton ton de voix",
+      "Idées de posts issues des tendances du moment",
+      "Calendrier éditorial intelligent (avec suggestions d’horaires)",
+      "Uniquement pour LinkedIn (FR/EN)"
+    ],
+    "phase2Title": "Été 2024 — Nouvelles fonctionnalités",
+    "phase2List": [
+      "Visuels auto-générés pour accompagner les posts",
+      "Estimation de performance pré-publication",
+      "Ajout d’Instagram & X (ancien Twitter) — en version bêta",
+      "Planification en un clic sur plusieurs réseaux — formats auto-adaptés"
 
+    ],
+    "phase3Title": "Prochaines étapes (automne et +)",
+    "phase3List": [
+      "Suggestions ultra-ciblées selon ton audience",
+      "Fonction “boost communautaire” (entraide, likes…)",
+      "Formats audio/vidéo courts (Reels, Shorts…)",
+      "Analyse de performance complète (clics, vues, durée, etc.)"
+
+    ]
   }
   

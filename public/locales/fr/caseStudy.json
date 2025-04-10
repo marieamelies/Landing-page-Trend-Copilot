@@ -1,12 +1,11 @@
 {
-    "name": "Sofia",
-    "role": "Freelance en stratégie de contenu",
-    "bio": "Avant Trend Copilot, Sofia passait plusieurs heures par semaine à créer ses posts LinkedIn. Aujourd’hui, elle prépare une semaine complète de contenu en 15 minutes — visuels, textes et hashtags inclus.",
-    "title": "Voici ce que Sofia obtient avec Trend Copilot en 24h",
-    "aiGeneratedPost": "Aperçu d’un post généré par l’IA",
-    "postTitle": "Le déclic qui a boosté ma visibilité en ligne",
-    "postText": "En 2024, publier ne suffit plus. Il faut publier avec intention. En ajustant légèrement la façon dont je présente ma valeur, j’ai vu une vraie différence dans l’engagement. Voilà ce que j’ai changé.",
-    "hashtags": "stratégiedecontenu, freelance, assistantIA, astucesréseauxsociaux",
-    "performance": "Portée estimée : +1 800 vues • +3h gagnées par rapport à sa méthode manuelle"
-  }
-  
+  "title": "Exemple d'utilisation réelle",
+  "name": "Sofia",
+  "role": "Freelance en stratégie de contenu",
+  "bio": "Avant Trend Copilot, Sofia passait plusieurs heures à créer ses posts LinkedIn. Aujourd’hui, elle génère une semaine complète de contenu en 15 minutes — visuels, textes et hashtags inclus.",
+  "aiGeneratedPost": "Exemple de post généré",
+  "postTitle": "5 idées de contenu pour les freelances fatigué·es des to-do lists ✍️",
+  "postText": "Marre de passer 2h à chercher quoi poster ? Voici 5 formats simples pour attirer votre audience sans stress → carousel, top 3, opinion, mini-analyse, ou retour d'expérience.",
+  "hashtags": "freelance, contentstrategy, LinkedInTips",
+  "performance": "📈 +238 vues • +31 likes • 4 partages"
+}

@@ -1,33 +1,18 @@
 {
     "title": "Ce que Trend Copilot résout",
-    "subtitle": "Les problèmes que tous les créateurs rencontrent, et qu'on vous aide à éliminer.",
-    "item1": {
-      "title": "🕒 Trop de temps perdu",
-      "desc": "Des heures gaspillées chaque semaine à tout faire à la main."
-    },
-    "item2": {
-      "title": "💡 Manque d’idées",
-      "desc": "“Je sais pas quoi poster” — le blocage classique."
-    },
-    "item3": {
-      "title": "📉 Engagement trop faible",
-      "desc": "Peu de vues, peu d’impact, peu de résultats."
-    },
-    "item4": {
-      "title": "📆 Pas de régularité",
-      "desc": "Publier une fois, puis rien… Ton audience décroche."
-    },
-    "item5": {
-      "title": "❓ Trop d’incertitudes",
-      "desc": "Sujet ? Format ? Heure ? Réseau ? Difficile de choisir."
-    },
-    "item6": {
-      "title": "🔁 Toujours recommencer",
-      "desc": "Rien n’est automatisé. Tout est à refaire à chaque fois."
-    },
-    "item7": {
-      "title": "⚙️ Trop d’outils à combiner",
-      "desc": "Canva, Notion, ChatGPT, planning… un chaos total."
-    }
+    "subtitle": "Les problèmes que tous les créateurs rencontrent — qu’on vous aide à éliminer.",
+    "point1Title": "Trop de temps perdu",
+    "point1Desc": "Des heures gaspillées chaque semaine à jongler entre outils et posts manuels.",
+    "point2Title": "Manque d’idées",
+    "point2Desc": "Difficile de savoir quoi publier, surtout avec la pression de rester régulier.",
+    "point3Title": "Engagement trop faible",
+    "point3Desc": "Peu de vues, peu de clics, peu de résultats… malgré tous vos efforts.",
+    "point4Title": "Pas de régularité",
+    "point4Desc": "Publier une fois, puis plus rien… et votre audience décroche rapidement.",
+    "point5Title": "Trop d’incertitudes",
+    "point5Desc": "Sujet ? Format ? Heure ? Réseau ? Un brouillard qui freine l'action.",
+    "point6Title": "Toujours recommencer",
+    "point6Desc": "Pas d’automatisation. Chaque post prend un temps fou à refaire."
   }
+  
   

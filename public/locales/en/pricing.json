@@ -1,0 +1,55 @@
+{
+    "title": "Pricing",
+    "perMonth": "month",
+  
+    "starter": {
+      "title": "Starter – €19/month",
+      "f1": "1 social network (LinkedIn only)",
+      "f2": "3 posts per week",
+      "f3": "AI-powered content generation, no prompt needed",
+      "f4": "Personalized tone + hashtags + formatting",
+      "f5": "Editorial calendar (7-day limit)",
+      "f6": "Trending topic suggestions",
+      "f7": "Smart onboarding",
+      "f8": "Content in EN & FR",
+      "f9": "Early access to the beta version",
+  
+      "na1": "No performance analytics",
+      "na2": "No Instagram or X (Twitter)",
+      "na3": "No CSV export",
+      "na4": "No priority support",
+      "na5": "No early access to new features"
+    },
+  
+    "pro": {
+      "title": "Pro – €39/month",
+      "badge": "Most popular",
+      "f1": "Up to 3 networks (LinkedIn, Instagram, X)",
+      "f2": "10 posts per week",
+      "f3": "Content tailored to each platform",
+      "f4": "Early access to new features",
+      "f5": "Performance analytics (clicks, views, engagement)",
+      "f6": "CSV export",
+      "f7": "Priority email support",
+      "f8": "Enhanced onboarding + AI recommendations",
+      "f9": "Publication time suggestions",
+      "f10": "Post history"
+    },
+  
+    "max": {
+      "title": "MAX Visibility Plan – €149/month",
+      "badge": "Annual commitment",
+      "price": "149€",
+      "f1": "All features from the Pro plan",
+      "f2": "SEO-optimized multilingual landing page",
+      "f3": "Automatic welcome email on signup",
+      "f4": "Integrated tracking tools (traffic, conversions, etc.)",
+      "f5": "Delivery in 7 business days max",
+      "f6": "Optional: logo + mini brand guidelines"
+    },
+  
+    "ctaContact": "Want to boost your visibility with the MAX plan?",
+    "ctaSubtext": "Or have a question? Write to us at <a href=\"mailto:hello@trendcopilot.ai\" class=\"text-indigo-600 underline\">hello@trendcopilot.ai</a>"
+  }
+  
+  

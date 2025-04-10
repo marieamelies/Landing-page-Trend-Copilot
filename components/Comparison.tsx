@@ -43,6 +43,12 @@ const Comparison: FC = () => {
       classic: t('classic6'),
       trend: t('trend6'),
     },
+
+    {
+        label: t('row7'),
+        classic: t('classic7'),
+        trend: t('trend7'),
+      },
   ];
 
   return (
@@ -52,25 +58,37 @@ const Comparison: FC = () => {
           {t('title')}
         </h2>
         <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse">
+          <table className="w-full text-left border-collapse rounded-xl overflow-hidden shadow-md">
             <thead>
               <tr className="bg-gray-100 dark:bg-gray-800 text-sm md:text-base">
-                <th className="p-4 font-semibold text-gray-700 dark:text-gray-300">{t('feature')}</th>
-                <th className="p-4 font-semibold text-gray-700 dark:text-gray-300">{t('classicTools')}</th>
-                <th className="p-4 font-semibold text-gray-700 dark:text-gray-300">Trend Copilot</th>
+                <th className="p-4 font-semibold text-gray-700 dark:text-gray-300 text-left">
+                  {t('feature')}
+                </th>
+                <th className="p-4 font-semibold text-gray-700 dark:text-gray-300 text-left">
+                  {t('classicTools')}
+                </th>
+                <th className="p-4 font-semibold text-gray-700 dark:text-gray-300 text-left">
+                  Trend Copilot
+                </th>
               </tr>
             </thead>
             <tbody>
               {rows.map((row, idx) => (
                 <tr
                   key={idx}
-                  className={`border-t border-gray-200 dark:border-gray-700 ${
+                  className={`${
                     idx % 2 === 0 ? 'bg-white dark:bg-gray-900' : 'bg-gray-50 dark:bg-gray-800'
-                  }`}
+                  } text-sm md:text-base border-t border-gray-100 dark:border-gray-700`}
                 >
-                  <td className="p-4 text-gray-900 dark:text-white font-medium">{row.label}</td>
-                  <td className="p-4 text-gray-600 dark:text-gray-400">{row.classic}</td>
-                  <td className="p-4 text-green-600 dark:text-green-400 font-semibold">{row.trend}</td>
+                  <td className="px-4 py-5 text-left text-gray-900 dark:text-white font-semibold">
+                    {row.label}
+                  </td>
+                  <td className="px-4 py-5 text-left text-gray-600 dark:text-gray-400">
+                    {row.classic}
+                  </td>
+                  <td className="px-4 py-5 text-left text-[#5C33F6] dark:text-[#A78BFA] font-semibold">
+                    {row.trend}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -82,3 +100,4 @@ const Comparison: FC = () => {
 };
 
 export default Comparison;
+

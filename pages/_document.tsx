@@ -4,9 +4,26 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* Google Fonts */}
         <link
           href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&display=swap"
           rel="stylesheet"
+        />
+
+        {/* Plausible Analytics - advanced setup with outbound links & custom events */}
+        <script
+          defer
+          data-domain="trendcopilot.ai"
+          src="https://plausible.io/js/script.outbound-links.tagged-events.js"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.plausible = window.plausible || function () {
+                (window.plausible.q = window.plausible.q || []).push(arguments);
+              }
+            `,
+          }}
         />
       </Head>
       <body className="antialiased">

@@ -1,25 +1,26 @@
 {
-    "title": "Features coming after launch",
-    "item1": {
-      "title": "Instagram & X (Twitter) support",
-      "desc": "You’ll soon be able to schedule and publish to Instagram and X directly from Trend Copilot."
-    },
-    "item2": {
-      "title": "Voice-to-post creation",
-      "desc": "Speak an idea and let the AI turn it into a publish-ready post."
-    },
-    "item3": {
-      "title": "AI replies to comments",
-      "desc": "Automatically reply to your top comments using smart AI suggestions."
-    },
-    "item4": {
-      "title": "Deeper performance insights",
-      "desc": "Advanced analytics on engagement, audience behaviour and content formats."
-    },
-    "item5": {
-      "title": "Automatic smart formatting",
-      "desc": "Your posts will soon be auto-styled based on structure, tone and the target platform."
-}
+    "title": "Public roadmap (Spring 2024 – early 2025)",
+    "phase1Title": "May 2024 — Initial launch",
+    "phase1List": [
+      "Promptless content generation, in your tone of voice",
+      "Post ideas based on current trends",
+      "Smart editorial calendar (with optimal times)",
+      "Only for LinkedIn (FR/EN)"
+    ],
+    "phase2Title": "Summer 2024 — Upcoming features",
+    "phase2List": [
+      "Auto-generated visuals to match each post",
+      "Impact score estimate before publishing",
+      "Instagram & X (formerly Twitter) support — beta",
+      "One-click scheduling across multiple platforms — auto-adapted formats"
 
+    ],
+    "phase3Title": "Next steps (Fall & beyond)",
+    "phase3List": [
+      "Hyper-personalised suggestions based on your audience",
+      "“Community boost” feature (engagement exchange)",
+      "Short-form video/audio content (Reels, Shorts…)",
+      "Full performance analytics (clicks, reach, duration, etc.)"
+    ]
   }
   

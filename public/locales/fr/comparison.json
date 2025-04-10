@@ -2,23 +2,36 @@
     "title": "Pourquoi Trend Copilot change la donne",
     "feature": "Fonctionnalité",
     "classicTools": "Outils classiques",
-    "row1": "Contenu généré par l'IA à partir des tendances",
-    "classic1": "❌ Recherches et prompts manuels nécessaires",
-    "trend1": "✅ Généré automatiquement depuis les tendances en temps réel",
-    "row2": "Visuels, textes et hashtags inclus",
-    "classic2": "❌ Nécessite 3 outils ou un travail manuel",
-    "trend2": "✅ Tout est prêt dans chaque post",
-    "row3": "Ton personnalisé et ciblage intelligent",
-    "classic3": "⚠️ Nécessite des ajustements manuels",
-    "trend3": "✅ Adapté à ton ton et ton audience",
-    "row4": "Planification multi-réseaux intégrée",
-    "classic4": "⚠️ Nécessite Notion, Buffer ou équivalent",
-    "trend4": "✅ Calendrier intelligent intégré",
-    "row5": "Zéro prompt à écrire",
-    "classic5": "❌ Tu écris un prompt à chaque fois",
-    "trend5": "✅ Entièrement sans prompt",
-    "row6": "Disponible en français et en anglais",
-    "classic6": "⚠️ Souvent limité à une seule langue",
-    "trend6": "✅ Génération de contenu multilingue"
+    
+    "row1": "Contenu généré automatiquement depuis les tendances",
+    "classic1": "❌ Recherches manuelles + prompts ChatGPT",
+    "trend1": "✅ Sujets proposés chaque jour selon l’actualité",
+
+    "row2": "Textes & hashtags prêts à publier",
+    "classic2": "⚠️ Canva, Notion et Google Sheets à combiner",
+    "trend2": "✅ Un seul outil — visuels bientôt intégrés",
+
+    "row3": "Ton de voix semi-personnalisé",
+    "classic3": "⚠️ Doit être ajusté manuellement post par post",
+    "trend3": "✅ Adapté à ton style et ton audience dès le départ",
+
+    "row4": "Calendrier intelligent (LinkedIn uniquement)",
+    "classic4": "⚠️ Nécessite Trello, Buffer, Notion…",
+    "trend4": "✅ Suggestions automatiques d’horaires de publication",
+
+    "row5": "Aucun prompt à écrire",
+    "classic5": "❌ Tu dois formuler une demande à chaque post",
+    "trend5": "✅ Propositions instantanées, sans prompt nécessaire",
+
+    "row6": "Contenu multilingue",
+    "classic6": "⚠️ Limité à une langue / traduit manuellement",
+    "trend6": "✅ Génération de contenu en français et anglais",
+    
+    "row7": "Fiabilité des contenus générés",
+    "classic7": "⚠️ Sources mixtes, parfois inventées ou non vérifiées",
+    "trend7": "✅ Sujets issus de sources publiques traçables et tendances réelles"
+      
+      
   }
+  
   

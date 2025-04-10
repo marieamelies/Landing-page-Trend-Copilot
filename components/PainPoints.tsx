@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next';
-import type { FC } from 'react';
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
+import { Clock, MessageSquareDashed, TrendingDown, CalendarDays, HelpCircle, Puzzle } from 'lucide-react';
 
 const PainPoints: FC = () => {
   const { t, i18n } = useTranslation('pain');
@@ -12,36 +12,62 @@ const PainPoints: FC = () => {
 
   if (!isReady) return null;
 
-  const pains = [
-    { title: t('item1.title'), desc: t('item1.desc') },
-    { title: t('item2.title'), desc: t('item2.desc') },
-    { title: t('item3.title'), desc: t('item3.desc') },
-    { title: t('item4.title'), desc: t('item4.desc') },
-    { title: t('item5.title'), desc: t('item5.desc') },
-    { title: t('item6.title'), desc: t('item6.desc') },
-    { title: t('item7.title'), desc: t('item7.desc') }
+  const points = [
+    {
+      icon: <Clock className="text-[#5C33F6] w-6 h-6" />, 
+      title: t('point1Title'),
+      desc: t('point1Desc')
+    },
+    {
+      icon: <MessageSquareDashed className="text-[#5C33F6] w-6 h-6" />, 
+      title: t('point2Title'),
+      desc: t('point2Desc')
+    },
+    {
+      icon: <TrendingDown className="text-[#5C33F6] w-6 h-6" />, 
+      title: t('point3Title'),
+      desc: t('point3Desc')
+    },
+    {
+      icon: <CalendarDays className="text-[#5C33F6] w-6 h-6" />, 
+      title: t('point4Title'),
+      desc: t('point4Desc')
+    },
+    {
+      icon: <HelpCircle className="text-[#5C33F6] w-6 h-6" />, 
+      title: t('point5Title'),
+      desc: t('point5Desc')
+    },
+    {
+      icon: <Puzzle className="text-[#5C33F6] w-6 h-6" />, 
+      title: t('point6Title'),
+      desc: t('point6Desc')
+    }
   ];
 
   return (
-    <section className="w-full px-4 py-20 bg-gray-50 dark:bg-gray-800">
+    <section className="w-full py-20 px-4 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12">
           {t('title')}
         </h2>
-        <p className="text-gray-600 dark:text-gray-400 mb-12">
-          {t('subtitle')}
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-          {pains.map((pain, idx) => (
-            <div
-              key={idx}
-              className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700"
+        <div className="grid md:grid-cols-2 gap-8 text-left">
+          {points.map((point, idx) => (
+            <div 
+              key={idx} 
+              className="flex items-start space-x-4 bg-white dark:bg-gray-800 p-6 rounded-xl shadow border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow"
             >
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center">
-                <span className="mr-2 text-xl opacity-70" aria-hidden="true">{pain.emoji}</span>
-                {pain.title}
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300 mt-2">{pain.desc}</p>
+              <div className="p-2 bg-[#F3EEFF] rounded-full">
+                {point.icon}
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  {point.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 mt-1">
+                  {point.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>

@@ -1,24 +1,37 @@
 {
-    "title": "Why Trend Copilot is a game changer",
+    "title": "Why Trend Copilot is a game-changer",
     "feature": "Feature",
-    "classicTools": "Classic Tools",
-    "row1": "AI-generated content from real trends",
-    "classic1": "❌ Manual prompts & research required",
-    "trend1": "✅ Automatically pulls from live trends",
-    "row2": "Visuals, captions & hashtags done for you",
-    "classic2": "❌ Requires 3+ tools or manual work",
-    "trend2": "✅ Included with every post",
-    "row3": "Personalized tone & audience targeting",
-    "classic3": "⚠️ Needs manual fine-tuning",
-    "trend3": "✅ Adapted to your tone and goals",
-    "row4": "Scheduling across multiple platforms",
-    "classic4": "⚠️ Often needs external planner (Notion, Buffer)",
-    "trend4": "✅ One-click publishing calendar built-in",
-    "row5": "No prompt needed, just your goal",
-    "classic5": "❌ You write prompts every time",
-    "trend5": "✅ Fully promptless experience",
-    "row6": "Works in English & French",
-    "classic6": "⚠️ Usually one-language only",
-    "trend6": "✅ Multilingual content generation"
+    "classicTools": "Traditional tools",
+
+    "row1": "AI-powered content from trending topics",
+    "classic1": "❌ Manual research + ChatGPT prompts",
+    "trend1": "✅ Daily ideas suggested by the AI based on current trends",
+
+    "row2": "Ready-to-post text & hashtags",
+    "classic2": "⚠️ Requires Canva, Notion and spreadsheets combined",
+    "trend2": "✅ One tool for everything — visuals coming soon",
+
+    "row3": "Semi-personalized tone of voice",
+    "classic3": "⚠️ Requires manual editing for each post",
+    "trend3": "✅ Matches your style and audience by default",
+
+    "row4": "Smart scheduling (LinkedIn only)",
+    "classic4": "⚠️ Needs Trello, Buffer, Notion...",
+    "trend4": "✅ Calendar with smart time slot suggestions",
+
+    "row5": "Zero prompt required",
+    "classic5": "❌ You need to type a prompt for every post",
+    "trend5": "✅ Instant suggestions — no input needed",
+
+    "row6": "Multilingual content",
+    "classic6": "⚠️ Limited to one language or manual translation",
+    "trend6": "✅ Create content in both French and English",
+
+    
+    "row7": "Reliability of generated content",
+    "classic7": "⚠️ Mixed sources, sometimes unverified or made-up",
+    "trend7": "✅ Based on public, verifiable sources and real-world trends"
+    
+      
   }
   
