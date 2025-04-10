@@ -24,7 +24,8 @@ import Link from 'next/link';
 // Déclaration de type pour Google Analytics
 declare global {
   interface Window {
-    gtag?: (command: string, action: string, params: any) => void;
+    gtag?: (command: 'config' | 'event', action: string, params?: Record<string, unknown>) => void;
+
   }
 }
 

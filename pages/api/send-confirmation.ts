@@ -81,8 +81,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     })
 
     return res.status(200).json({ message: 'Confirmation email sent', data })
-  } catch (err: any) {
-    console.error('❌ Email send failed:', err)
-    return res.status(500).json({ message: 'Failed to send confirmation email' })
+} catch (err: unknown) {
+    if (err instanceof Error) {
+      console.error('❌ Email send failed:', err.message);
+    } else {
+      console.error('❌ Unknown error:', err);
+    }
+    return res.status(500).json({ message: 'Failed to send confirmation email' });
   }
 }

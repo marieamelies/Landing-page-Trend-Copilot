@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import type { FC } from 'react';
 import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
+
 
 const Hero: FC = () => {
   const { t, i18n } = useTranslation('hero');

@@ -1,7 +1,8 @@
 declare global {
     interface Window {
-      plausible: (...args: any[]) => void;
+      plausible?: (event: string, options?: { props?: Record<string, unknown> }) => void;
     }
+      
   }
   
   import { useTranslation } from 'next-i18next';
@@ -19,6 +20,7 @@ declare global {
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState('');
     const formRef = useRef<HTMLFormElement>(null);
+    const hasTrackedDeepScroll = useRef(false);
   
     // Options pour le champ de rôle
     const roleOptions = [
@@ -36,8 +38,68 @@ declare global {
       }
     }, [i18n.language]);
   
+    // Track deep scroll (80% of page)
+    useEffect(() => {
+      const handleScroll = () => {
+        if (hasTrackedDeepScroll.current) return;
+        
+        const scrollPosition = window.scrollY + window.innerHeight;
+        const pageHeight = document.body.scrollHeight;
+        const scrollPercent = (scrollPosition / pageHeight) * 100;
+        
+        if (scrollPercent >= 80) {
+          if (typeof window !== 'undefined' && window.plausible) {
+            window.plausible('scroll_80_percent');
+          }
+          hasTrackedDeepScroll.current = true;
+          window.removeEventListener('scroll', handleScroll); // une seule fois
+        }
+      };
+      
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+  
+    // Changement de langue - fonction à utiliser dans votre sélecteur de langue
+    const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+      const selected = e.target.value;
+      
+      if (typeof window !== 'undefined' && window.plausible) {
+        window.plausible('language_switch', { 
+          props: { 
+            to: selected 
+          },
+        });
+      }
+      
+      // Navigation
+      window.location.pathname = selected === 'en' ? '/' : `/${selected}`;
+    };
+  
+    // Clic sur le bouton "Test Now" - à utiliser dans le bouton concerné
+    const handleTestNowClick = () => {
+      if (typeof window !== 'undefined' && window.plausible) {
+        window.plausible('click_test_now', { 
+          props: { 
+            language: i18n.language 
+          },
+        });
+      }
+      // Action réelle ici (navigation, ouverture modal, etc.)
+      // Par exemple: window.location.href = '/demo';
+    };
+  
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
+      if (typeof window !== 'undefined' && typeof window.plausible === 'function') {
+        window.plausible('waitlist_signup', {
+          props: {
+            language: i18n.language,
+            location: window.location.pathname,
+          },
+        });
+      }
+      
       
       // Validation basique
       if (!email.trim()) {
@@ -180,6 +242,14 @@ declare global {
                   Kickstarter
                 </a>
               </p>
+              
+              {/* Bouton "Je veux tester l'outil tout de suite" (exemple) */}
+              <button
+                onClick={handleTestNowClick}
+                className="mt-6 py-2 px-6 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-all"
+              >
+                {t('testNow', 'Je veux tester l\'outil tout de suite')}
+              </button>
             </div>
           ) : (
             /* Form */
@@ -292,6 +362,22 @@ declare global {
                 {/* Privacy policy */}
                 <div className="text-xs text-gray-500 dark:text-gray-400 text-center mt-4">
                   {t('privacyNotice', 'By joining, you agree to our Terms and Privacy Policy. We\'ll only use your email to send you updates about Trend Copilot.')}
+                </div>
+                
+                {/* Language selector example - normally would be in header/footer */}
+                <div className="mt-8 pt-4 border-t border-gray-200 dark:border-gray-700">
+                  <label htmlFor="language" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    {t('languageLabel', 'Choose language')}
+                  </label>
+                  <select
+                    id="language"
+                    value={i18n.language}
+                    onChange={handleLanguageChange}
+                    className="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+                  >
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                  </select>
                 </div>
               </div>
             </form>
