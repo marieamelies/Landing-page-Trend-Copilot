@@ -13,7 +13,7 @@ export default function Document() {
           rel="stylesheet"
         />
 
-        {/* Plausible Analytics - advanced setup with outbound links & custom events */}
+        {/* 📊 Plausible Analytics - advanced setup with outbound links & custom events */}
         <script
           defer
           data-domain="trendcopilot.ai"
@@ -28,6 +28,15 @@ export default function Document() {
             `,
           }}
         />
+
+        {/* 🌐 Favicons + PWA meta */}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#5C33F6" />
+        <meta name="msapplication-TileColor" content="#5C33F6" />
       </Head>
       <body className="antialiased">
         <Main />
