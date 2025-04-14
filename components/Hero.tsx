@@ -308,12 +308,5 @@ const Hero: FC = () => {
   );
 };
 
-// Add TypeScript interface for window.plausible
-declare global {
-  interface Window {
-    plausible?: (event: string) => void;
-    fs?: unknown;
-  }
-}
 
 export default Hero;

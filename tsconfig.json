@@ -18,6 +18,6 @@
     },
     "noImplicitAny": false // ✅ suffisant pour corriger les erreurs `any` sans `suppressImplicitAnyIndexErrors`
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types"],
   "exclude": ["node_modules"]
 }

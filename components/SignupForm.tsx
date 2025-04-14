@@ -1,10 +1,4 @@
-declare global {
-    interface Window {
-      plausible?: (event: string, options?: { props?: Record<string, unknown> }) => void;
-    }
-      
-  }
-  
+
   import { useTranslation } from 'next-i18next';
   import type { FC } from 'react';
   import { useState, useRef, useEffect } from 'react';
