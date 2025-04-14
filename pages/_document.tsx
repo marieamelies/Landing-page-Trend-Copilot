@@ -7,6 +7,11 @@ export default function Document() {
         {/* 🔍 Google Search Console verification */}
         <meta name="google-site-verification" content="2jhDEdPWV8oEF5cFDgEORtp6CAUfgkJaIYJatI53HD8" />
 
+        {/* 🌍 Multilingual hreflang SEO */}
+        <link rel="alternate" hrefLang="fr" href="https://trendcopilot.ai/fr" />
+        <link rel="alternate" hrefLang="en" href="https://trendcopilot.ai/en" />
+        <link rel="alternate" hrefLang="x-default" href="https://trendcopilot.ai" />
+
         {/* Google Fonts */}
         <link
           href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&display=swap"
