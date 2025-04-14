@@ -298,7 +298,9 @@ const Hero: FC = () => {
                 {platform.name}
               </div>
             </div>
-          ))}
+          ))
+          
+          }
           </div>
         </div>
       </div>
