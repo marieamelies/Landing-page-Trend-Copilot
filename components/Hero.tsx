@@ -1,7 +1,7 @@
 import { useTranslation, Trans } from 'next-i18next';
 import type { FC } from 'react';
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { Calendar, Edit, Zap, Globe, Lock, Users } from 'lucide-react';
+import { Calendar, Edit, Zap, Globe, Lock } from 'lucide-react';
 import React from 'react';
 
 
@@ -310,37 +310,8 @@ const Hero: FC = () => {
 declare global {
   interface Window {
     plausible?: (event: string) => void;
-    fs?: any;
+    fs?: unknown;
   }
 }
-
-<div className="opacity-0 translate-y-4 animate-fade-in-scroll">
-  {/* Votre contenu */}
-</div>
-
-// Ajoutez ce code dans votre fichier _app.tsx ou dans un composant de mise en page
-import Head from 'next/head';
-
-// À utiliser dans votre composant Layout ou dans votre _app.tsx
-export const MetaTags = () => (
-  <Head>
-    <title>Copilote IA pour réseaux sociaux | Trend Copilot</title>
-    <meta name="description" content="Planifiez, créez et publiez vos posts en un clic grâce à l'IA. Sans prompts. Sans burnout." />
-    <link rel="icon" href="/favicon.ico" />
-    
-    {/* Open Graph / Facebook */}
-    <meta property="og:title" content="Trend Copilot – Votre IA pour les réseaux sociaux" />
-    <meta property="og:description" content="Plus besoin de prompts ou Canva. Gagnez du temps, boostez votre présence avec l'IA." />
-    <meta property="og:image" content="/og-image.jpg" />
-    <meta property="og:url" content="https://trendcopilot.io" />
-    <meta property="og:type" content="website" />
-    
-    {/* Twitter */}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Trend Copilot – Votre IA pour les réseaux sociaux" />
-    <meta name="twitter:description" content="Plus besoin de prompts ou Canva. Gagnez du temps, boostez votre présence avec l'IA." />
-    <meta name="twitter:image" content="/og-image.jpg" />
-  </Head>
-);
 
 export default Hero;
