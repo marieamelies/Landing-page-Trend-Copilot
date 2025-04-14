@@ -134,10 +134,10 @@ const Hero: FC = () => {
             i18nKey="subtext" 
             t={t} 
             components={[
-              <span className="font-semibold text-gray-900 dark:text-white" />,
-              <span className="text-[#5C33F6] font-bold" />,
-              <span className="text-gray-700/90 dark:text-gray-300/90" />,
-              <span className="text-[#5C33F6] font-semibold" />
+              <span key="bold1" className="font-semibold text-gray-900 dark:text-white" />,
+              <span key="highlight" className="text-[#5C33F6] font-bold" />,
+              <span key="text" className="text-gray-700/90 dark:text-gray-300/90" />,
+              <span key="bold2" className="text-[#5C33F6] font-semibold" />
             ]}
           />
         </p>
