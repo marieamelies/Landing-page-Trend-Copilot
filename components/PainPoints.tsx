@@ -48,9 +48,12 @@ const PainPoints: FC = () => {
   return (
     <section className="w-full py-20 px-4 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
           {t('title')}
         </h2>
+        <p className="text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
+          {t('subtitle')}
+        </p>
         <div className="grid md:grid-cols-2 gap-8 text-left">
           {points.map((point, idx) => (
             <div 
@@ -77,3 +80,4 @@ const PainPoints: FC = () => {
 };
 
 export default PainPoints;
+

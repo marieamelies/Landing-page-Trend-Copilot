@@ -1,6 +1,46 @@
 {
-    "tagline": "The only AI copilot that builds your online presence like a pro — without the burnout.",
+    "tagline": "Your AI copilot for building an online presence — without the burnout.",
+    "subtext": "<0>Tired of spending hours creating content?</0> <1>Trend Copilot</1> <2>generates and schedules your posts automatically, in your tone of voice, using real-time trends.</2> <3>No prompt, no Canva, no stress — we handle it all.</3>",
+    "points": [
+      {
+        "icon": "calendar",
+        "text": "Smart editorial calendar (LinkedIn first)"
+      },
+      {
+        "icon": "edit",
+        "text": "Ready-to-post content (copy + hashtags, visuals coming soon)"
+      },
+      {
+        "icon": "zap",
+        "text": "All-in-one: create, plan and publish in one place"
+      },
+      {
+        "icon": "globe",
+        "text": "Multilingual & multi-platform (EN/FR)"
+      }
+    ],
     "cta": "Join the waitlist",
-    "usersJoined": "users already joined",
-    "earlyAccess": "Early access + bonus for the first signups (limited)"
+    "ctaEmotional": "🔥 Save your spot – limited access",
+    "usersJoined": "creators already joined",
+    "earlyAccess": "Early access + bonus for the first 50 signups",
+    "benefit1": {
+      "title": "Save Time",
+      "desc": "Hours saved every week"
+    },
+    "benefit2": {
+      "title": "AI-Powered Content",
+      "desc": "Personalized, no prompt needed"
+    },
+    "benefit3": {
+      "title": "Multi-Platform",
+      "desc": "Publish everywhere at once"
+    },
+    "launchBadge": "Private Beta Access • Limited Spots Available",
+    "urgencyMessage": "Hurry! Only {{count}} spots remaining",
+    "spotsRemaining": "Only {{count}} early access spots remaining",
+    "trustedBy": "Perfect for creators on",
+    "reassurance": {
+      "free": "100% free – no card required"
+    }
   }
+  

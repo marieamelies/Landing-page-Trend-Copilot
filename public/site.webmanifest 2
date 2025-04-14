@@ -1,0 +1,25 @@
+{
+  "name": "Trend Copilot",
+  "short_name": "Copilot",
+  "description": "AI-powered assistant that builds your online presence across all social media — without the burnout.",
+  "lang": "en",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#5C33F6",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

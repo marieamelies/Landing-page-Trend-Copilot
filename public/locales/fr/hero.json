@@ -1,8 +1,48 @@
-
-  {
-    "tagline": "Le seul copilote IA qui construit ta présence en ligne comme un pro — sans le burnout.",
-    "cta": "Rejoindre la liste d'attente",
-    "usersJoined": "utilisateurs nous ont déjà rejoints",
-    "earlyAccess": "Accès anticipé + bonus pour les premiers inscrits (limité)"
+{
+    "tagline": "Votre copilote IA pour briller sur les réseaux — sans le burnout.",
+    "subtext": "<0>Vous passez des heures à créer du contenu ?</0> <1>Trend Copilot</1> <2>génère et planifie vos posts automatiquement, dans votre ton de voix, à partir des tendances du moment.</2> <3>Ni prompt, ni stress : on s’occupe de tout.</3>",
+    "points": [
+      {
+        "icon": "calendar",
+        "text": "Calendrier éditorial intelligent (LinkedIn pour commencer)"
+      },
+      {
+        "icon": "edit",
+        "text": "Contenus prêts à publier (textes + hashtags, visuels à venir)"
+      },
+      {
+        "icon": "zap",
+        "text": "Tout-en-un : création, planification et publication au même endroit"
+      },
+      {
+        "icon": "globe",
+        "text": "Multilingue & multi-réseaux (FR/EN)"
+      }
+    ],
+    "cta": "Rejoindre la liste d’attente",
+    "ctaEmotional": "🔥 Réserve ta place – accès limité",
+    "usersJoined": "créateurs nous ont déjà rejoints",
+    "earlyAccess": "Accès anticipé + bonus pour les 50 premiers inscrits",
+    "benefit1": {
+      "title": "Gagnez du temps",
+      "desc": "Des heures économisées chaque semaine"
+    },
+    "benefit2": {
+      "title": "Contenu IA personnalisé",
+      "desc": "Aucun prompt nécessaire, juste votre ton de voix"
+    },
+    "benefit3": {
+      "title": "Multi-plateforme",
+      "desc": "Publiez partout en un clic"
+    },
+    "launchBadge": "Accès bêta privé • Places limitées",
+    "urgencyMessage": "Dépêchez-vous ! Plus que {{count}} places disponibles",
+    "spotsRemaining": "Il ne reste que {{count}} places pour l'accès anticipé",
+    "trustedBy": "Parfait pour les créateurs sur",
+    "reassurance": {
+      "free": "100% gratuit – aucune carte requise"
+    }
   }
+  
+  
   

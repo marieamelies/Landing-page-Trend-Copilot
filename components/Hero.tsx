@@ -1,38 +1,27 @@
-import { useTranslation } from 'next-i18next';
+import { useTranslation, Trans } from 'next-i18next';
 import type { FC } from 'react';
-import { useState, useEffect, useRef } from 'react';
-
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { Calendar, Edit, Zap, Globe, Lock, Users } from 'lucide-react';
+import React from 'react';
 
 
 const Hero: FC = () => {
   const { t, i18n } = useTranslation('hero');
   const [isReady, setIsReady] = useState(false);
   const [userCount, setUserCount] = useState(0);
-  const [remainingSpots, setRemainingSpots] = useState(500);
+  const [remainingSpots, setRemainingSpots] = useState(50);
   const [isNewSignup, setIsNewSignup] = useState(false);
   const countRef = useRef<HTMLSpanElement>(null);
   
-  // Gérer les nouvelles inscriptions en temps réel
-  useEffect(() => {
-    if (i18n.language) {
-      setIsReady(true);
-      fetchUserCount(); // Exécuter une seule fois au mount
-    }
-  }, [i18n.language]);
-    // Plausible - Engaged 15s
-    useEffect(() => {
-      const timer = setTimeout(() => {
-        if (typeof window !== 'undefined' && window.plausible) {
-          window.plausible('engaged_15s');
-        }
-      }, 15000); // 15 secondes
+  const iconMap = {
+    calendar: <Calendar className="w-5 h-5 text-[#5C33F6]" />,
+    edit: <Edit className="w-5 h-5 text-[#5C33F6]" />,
+    zap: <Zap className="w-5 h-5 text-[#5C33F6]" />,
+    globe: <Globe className="w-5 h-5 text-[#5C33F6]" />,
+  };
   
-      return () => clearTimeout(timer);
-    }, []);
-  
-
-  // Fonction pour récupérer le nombre d'utilisateurs depuis l'API
-  const fetchUserCount = async () => {
+  // Memoize fetchUserCount function to avoid recreating it unnecessarily
+  const fetchUserCount = useCallback(async () => {
     try {
       // Remplacer par votre API réelle
       const response = await fetch('/api/waitlist-count');
@@ -57,13 +46,32 @@ const Hero: FC = () => {
       }
       
       setUserCount(data.count);
-      setRemainingSpots(Math.max(0, 500 - data.count));
+      setRemainingSpots(Math.max(0, 50 - data.count));
     } catch (error) {
       console.error("Erreur lors de la récupération du compteur", error);
       // Nouveau fallback sans incrément simulé
       console.warn('Fallback: keeping current count');
     }
-  };
+  }, [userCount]);
+
+  // Gérer les nouvelles inscriptions en temps réel
+  useEffect(() => {
+    if (i18n.language) {
+      setIsReady(true);
+      fetchUserCount(); // Exécuter une seule fois au mount
+    }
+  }, [i18n.language, fetchUserCount]);
+
+  // Plausible - Engaged 15s
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (typeof window !== 'undefined' && window.plausible) {
+        window.plausible('engaged_15s');
+      }
+    }, 15000); // 15 secondes
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // Mettre en place une connexion WebSocket ou SSE pour les mises à jour en temps réel
   useEffect(() => {
@@ -87,73 +95,110 @@ const Hero: FC = () => {
       if (eventSource) eventSource.close();
       clearInterval(interval);
     };
-  }, []);
+  }, [fetchUserCount]);
 
   if (!isReady) return null;
 
   return (
-    <section className="relative w-full py-24 px-4 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-black text-center overflow-hidden">
+    <section id="hero" className="relative w-full py-20 px-4 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-black text-center overflow-hidden">
       {/* Éléments de design d'arrière-plan - Améliorés pour plus d'impact */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="absolute -top-36 -right-36 w-80 h-80 bg-blue-100 dark:bg-blue-900 rounded-full opacity-20 blur-3xl"></div>
         <div className="absolute top-1/3 -left-24 w-64 h-64 bg-purple-100 dark:bg-purple-900 rounded-full opacity-20 blur-3xl"></div>
         <div className="absolute bottom-1/4 right-1/3 w-56 h-56 bg-pink-100 dark:bg-pink-900 rounded-full opacity-10 blur-2xl"></div>
       </div>
       
       <div className="relative max-w-5xl mx-auto flex flex-col items-center gap-8 z-10">
-        {/* Logo + Titre - Plus grand et impactant */}
+        {/* Logo + Titre (h1 uniquement pour le nom du produit) */}
         <div className="flex items-center gap-4">
           <div
             className="w-14 h-14 bg-gradient-to-br from-[#5C33F6] to-[#7B9AFF] rounded-full shadow-xl animate-slowspin"
             style={{
               clipPath: 'polygon(50% 0%, 80% 20%, 100% 50%, 80% 80%, 50% 100%, 20% 80%, 0% 50%, 20% 20%)',
             }}
+            aria-hidden="true"
           ></div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-clash text-gray-900 dark:text-white">
             Trend Copilot
           </h1>
         </div>
 
-        {/* Tagline avec mise en évidence - Plus grande et plus impactante */}
-        <p className="text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 max-w-3xl leading-tight">
-          {t('tagline', 'The only AI copilot that builds your online presence like a pro — without the burnout.')}
+        {/* Tagline en h2 pour SEO et accessibilité */}
+        <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 max-w-3xl leading-tight text-center">
+          {t('tagline')}
+        </h2>
+
+        {/* Subtext avec Trans pour une i18n robuste et mise en forme améliorée */}
+        <p className="text-base md:text-lg text-gray-700/90 dark:text-gray-300/90 max-w-xl text-center leading-7 tracking-tight" aria-labelledby="tagline">
+          <Trans 
+            i18nKey="subtext" 
+            t={t} 
+            components={[
+              <span className="font-semibold text-gray-900 dark:text-white" />,
+              <span className="text-[#5C33F6] font-bold" />,
+              <span className="text-gray-700/90 dark:text-gray-300/90" />,
+              <span className="text-[#5C33F6] font-semibold" />
+            ]}
+          />
         </p>
-        
-        {/* Nouvelle section: Value proposition en 3 points avec icônes SVG */}
+
+        {/* Bullet Points avec icônes de Lucide */}
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl">
+          {(t('points', { returnObjects: true }) as { icon: string; text: string }[]).map((point, idx) => (
+            <li
+              key={idx}
+              className="flex items-center gap-4 px-6 py-5 bg-white/60 dark:bg-gray-800/50 rounded-2xl border border-gray-200 dark:border-gray-700/30 backdrop-blur-md shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300 ease-out"
+            >
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#ece9fc] dark:bg-[#5C33F6]/20 shadow-inner" aria-hidden="true">
+                {React.cloneElement(iconMap[point.icon], { className: 'w-6 h-6 text-[#5C33F6]' })}
+              </div>
+              <p className="text-sm text-gray-800 dark:text-gray-100 font-medium leading-snug text-left">
+                {point.text}
+              </p>
+            </li>
+          ))}
+        </ul>
+
+        {/* Section Value Proposition avec icônes */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl my-2">
           {[
-            { 
-              icon: <svg className="w-8 h-8 text-[#5C33F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>,
-              title: t('benefit1.title', 'Save Time'), 
-              desc: t('benefit1.desc', 'Hours saved every week') 
+            {
+              icon: (
+                <svg className="w-8 h-8 text-[#5C33F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              ),
+              title: t('benefit1.title', 'Save Time'),
+              desc: t('benefit1.desc', 'Hours saved every week'),
             },
-            { 
-              icon: <svg className="w-8 h-8 text-[#5C33F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-              </svg>,
-              title: t('benefit2.title', 'AI-Powered Content'), 
-              desc: t('benefit2.desc', 'Personalized, no prompt needed') 
+            {
+              icon: (
+                <svg className="w-8 h-8 text-[#5C33F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              ),
+              title: t('benefit2.title', 'AI-Powered Content'),
+              desc: t('benefit2.desc', 'Personalized, no prompt needed'),
             },
-            { 
-              icon: <svg className="w-8 h-8 text-[#5C33F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-              </svg>,
-              title: t('benefit3.title', 'Multi-Platform'), 
-              desc: t('benefit3.desc', 'Publish everywhere at once') 
+            {
+              icon: (
+                <svg className="w-8 h-8 text-[#5C33F6]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                </svg>
+              ),
+              title: t('benefit3.title', 'Multi-Platform'),
+              desc: t('benefit3.desc', 'Publish everywhere at once'),
             },
           ].map((benefit, idx) => (
-            <div key={idx} className="flex flex-col items-center p-4 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-100 dark:border-gray-700/30 transform hover:scale-105 transition-transform">
+            <div
+              key={idx}
+              className="flex flex-col items-center p-4 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-100 dark:border-gray-700/30 transform hover:scale-105 transition-transform"
+            >
               <div className="mb-3" aria-hidden="true">
                 {benefit.icon}
               </div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
-                {benefit.title}
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                {benefit.desc}
-              </p>
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-1">{benefit.title}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{benefit.desc}</p>
             </div>
           ))}
         </div>
@@ -163,27 +208,39 @@ const Hero: FC = () => {
           {t('launchBadge', 'Private Beta Access • Limited Spots Available')}
         </div>
 
-        {/* CTA Principal avec micro-interaction amélioré */}
-        <button 
-          className="group relative bg-[#5C33F6] hover:bg-[#4826C9] text-white px-12 py-4 rounded-xl text-lg md:text-xl font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 overflow-hidden"
-          onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}
-        >
-          <span className="flex items-center justify-center gap-2 relative z-10">
-            {t('cta', 'Join the waitlist')}
-            <svg className="w-5 h-5 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </span>
-          {/* Effet d'animation au survol */}
-          <span className="absolute inset-0 w-full h-full bg-[#4826C9] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-        </button>
+        {/* CTA Principal avec micro-interaction amélioré et accessibilité */}
+        <div className="flex flex-col items-center gap-3">
+          <button 
+            className="group relative bg-[#5C33F6] hover:bg-[#4826C9] text-white px-12 py-4 rounded-xl text-lg md:text-xl font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 overflow-hidden"
+            onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}
+            aria-label={t('ctaEmotional', '🔥 Réserve ta place – accès limité')}
+          >
+            <span className="flex items-center justify-center gap-2 relative z-10">
+              {t('ctaEmotional', '🔥 Réserve ta place – accès limité')}
+              <svg className="w-5 h-5 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
+            {/* Effet d'animation au survol */}
+            <span className="absolute inset-0 w-full h-full bg-[#4826C9] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" aria-hidden="true"></span>
+          </button>
+          
+          {/* Micro-éléments de réassurance immédiate */}
+          <div className="flex items-center justify-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+            <div className="flex items-center gap-1.5">
+              <Lock className="w-3.5 h-3.5" aria-hidden="true" />
+              <span>{t('reassurance.free', '100% free – no card required')}</span>
+            </div>
+            
+          </div>
+        </div>
         
         {/* Section Urgence avec compteur réel - Optimisée */}
         <div className="flex flex-col items-center space-y-3 mt-2">
           {/* Compteur utilisateurs avec animation améliorée */}
           <div className="flex items-center gap-2">
-            <div className={`h-2.5 w-2.5 bg-green-500 rounded-full ${isNewSignup ? 'animate-ping' : 'animate-pulse'}`}></div>
-            <p className="text-gray-600 dark:text-gray-400">
+            <div className={`h-2.5 w-2.5 bg-green-500 rounded-full ${isNewSignup ? 'animate-ping' : 'animate-pulse'}`} aria-hidden="true"></div>
+            <p className="text-gray-600 dark:text-gray-400" aria-live="polite">
               <span 
                 ref={countRef}
                 className="font-bold text-black dark:text-white transition-all duration-700"
@@ -195,20 +252,20 @@ const Hero: FC = () => {
           
           {/* Early access badge avec design premium */}
           <div className="px-5 py-3 bg-gradient-to-r from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 text-orange-600 dark:text-orange-400 rounded-lg flex items-center gap-2 shadow-sm border border-orange-100/50 dark:border-orange-800/20">
-            <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span className="font-semibold">
-              {t('earlyAccess', 'Early access + premium features for the first 500 signups')}
+              {t('earlyAccess', 'Early access + premium features for the first 50 signups')}
             </span>
           </div>
           
           {/* Indication des places restantes - Conditionnelle basée sur l'urgence */}
           {remainingSpots > 0 && (
-            <div className={`text-sm ${remainingSpots <= 50 ? 'text-red-500 font-semibold' : 'text-gray-500 dark:text-gray-400'} font-medium`}>
+            <div className={`text-sm ${remainingSpots <= 50 ? 'text-red-500 font-semibold' : 'text-gray-500 dark:text-gray-400'} font-medium`} aria-live="polite">
               {remainingSpots <= 50 ? (
                 <div className="flex items-center gap-1.5 animate-pulse">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                     <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                   </svg>
                   {t('urgencyMessage', 'Hurry! Only {{count}} spots remaining', { count: remainingSpots })}
@@ -220,8 +277,9 @@ const Hero: FC = () => {
           )}
         </div>
         
-        {/* Social Proof - Version améliorée */}
-        <div className="mt-10 pt-8 border-t border-gray-100 dark:border-gray-800 w-full">
+        {/* Social Proof - Version améliorée avec animation au scroll */}
+        <div className="mt-10 pt-8 border-t border-gray-100 dark:border-gray-800 w-full animate-fade-in-scroll">
+
           <p className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-4 font-medium">
             {t('trustedBy', 'Perfect for creators on')}
           </p>
@@ -233,7 +291,7 @@ const Hero: FC = () => {
               { name: 'TikTok', icon: 'M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z' },
             ].map((platform) => (
               <div key={platform.name} className="flex flex-col items-center transform hover:scale-110 transition-transform">
-                <svg className="w-7 h-7 text-gray-600 dark:text-gray-300 mb-2" viewBox="0 0 16 16" fill="currentColor">
+                <svg className="w-7 h-7 text-gray-600 dark:text-gray-300 mb-2" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                   <path d={platform.icon} />
                 </svg>
                 <div className="text-gray-500 dark:text-gray-400 text-xs font-medium">
@@ -247,5 +305,42 @@ const Hero: FC = () => {
     </section>
   );
 };
+
+// Add TypeScript interface for window.plausible
+declare global {
+  interface Window {
+    plausible?: (event: string) => void;
+    fs?: any;
+  }
+}
+
+<div className="opacity-0 translate-y-4 animate-fade-in-scroll">
+  {/* Votre contenu */}
+</div>
+
+// Ajoutez ce code dans votre fichier _app.tsx ou dans un composant de mise en page
+import Head from 'next/head';
+
+// À utiliser dans votre composant Layout ou dans votre _app.tsx
+export const MetaTags = () => (
+  <Head>
+    <title>Copilote IA pour réseaux sociaux | Trend Copilot</title>
+    <meta name="description" content="Planifiez, créez et publiez vos posts en un clic grâce à l'IA. Sans prompts. Sans burnout." />
+    <link rel="icon" href="/favicon.ico" />
+    
+    {/* Open Graph / Facebook */}
+    <meta property="og:title" content="Trend Copilot – Votre IA pour les réseaux sociaux" />
+    <meta property="og:description" content="Plus besoin de prompts ou Canva. Gagnez du temps, boostez votre présence avec l'IA." />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:url" content="https://trendcopilot.io" />
+    <meta property="og:type" content="website" />
+    
+    {/* Twitter */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Trend Copilot – Votre IA pour les réseaux sociaux" />
+    <meta name="twitter:description" content="Plus besoin de prompts ou Canva. Gagnez du temps, boostez votre présence avec l'IA." />
+    <meta name="twitter:image" content="/og-image.jpg" />
+  </Head>
+);
 
 export default Hero;
